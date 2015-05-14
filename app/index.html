@@ -22,33 +22,26 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default navbar-inverse" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#/">Annuaire</a>
-          </div>
-
-          <div class="collapse navbar-collapse navbar-right" id="js-navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Accueil</a></li>
-              <li><a ng-href="#/utilisateurs">Utilisateurs</a></li>
-              <li><a ng-href="#/projets">Projets</a></li>
-            </ul>
-          </div>
-        </div>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li id="home_click" class="active"><a ng-href="#/" class="ongletEntete">Accueil</a></li>
+          <li id="utils_click"><a ng-href="#/utilisateurs" class="ongletEntete">Utilisateurs</a></li>
+          <li id="projets_click"><a ng-href="#/projets" class="ongletEntete">Projets</a></li>
+        </ul>
+        <h3 class="text-muted nomEntete">Annuaire promotion 2014-2015</h3>
       </div>
-    </div>
 
     <div class="container">
     <div ng-view=""></div>
     </div>
 
-    <div class="footer center">
-      <div class="container">
-        <p>Lucas SOUMILLE</p>
+      <div class="footer center">
+        <div class="container">
+          <p class="textGlobal">Site réalisé par Nicolas HORY</p>
+        </div>
       </div>
-    </div>
+      </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

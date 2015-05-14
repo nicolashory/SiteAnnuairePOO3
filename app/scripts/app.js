@@ -26,15 +26,15 @@ angular
       })
       .when('/utilisateurs', {
         templateUrl: '../views/utilisateurs/utilisateurs.html',
-        controller: 'UtilCtrl'
+        controller: 'UtilControler'
       })
       .when('/projets',{
         templateUrl:'../views/projets/projets.html',
         controller: 'ProjCtrl'
       })
-      .when('/addUtil',{
-        templateUrl:'../views/utilisateurs/addUtil.html',
-        controller: 'AddUtilCtrl'
+      .when('/ajoutUtil',{
+        templateUrl:'../views/utilisateurs/ajoutUtil.html',
+        controller: 'AjoutUtilCtrl'
       })
       .when('/addProj',{
         templateUrl:'../views/projets/addProj.html',
@@ -45,7 +45,7 @@ angular
         controller:'DetailUtilCtrl'
       })
       .when('/:userId/editerUtil', {
-        templateUrl:'../views/utilisateurs/addUtil.html',
+        templateUrl:'../views/utilisateurs/ajoutUtil.html',
         controller:'EditUtilCtrl'
       })
       .when('/:projId/editerProj', {
@@ -60,3 +60,23 @@ angular
         redirectTo: '/'
       });
   });
+
+$(document).ready(function() {
+  $("#home_click").click(function() {
+    $("#home_click").addClass("active");
+    $("#utils_click").removeClass("active");
+    $("#proojets_click").removeClass("active");
+  });
+
+  $("#utils_click").click(function() {
+    $("#utils_click").addClass("active");
+    $("#home_click").removeClass("active");
+    $("#projets_click").removeClass("active");
+  });
+
+  $("#projets_click").click(function() {
+    $("#projets_click").addClass("active");
+    $("#home_click").removeClass("active");
+    $("#utils_click").removeClass("active");
+  });
+});

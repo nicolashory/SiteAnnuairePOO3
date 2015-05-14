@@ -23,7 +23,7 @@ angular.module('gestionUsersApp')
 
     $scope.deleteElt = function (projId) {
       Projects.delete(projId, function(data){
-        $location.url('/projets');// ne marche pas
+        $location.path('/projets');
       }, function (data){
         //erreur dans le delete
       });

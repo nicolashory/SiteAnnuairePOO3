@@ -7,11 +7,7 @@
 
 body {
   padding: 0;
-  background-image: url("/images/brickwall.png");
-}
-
-img{
-  margin: auto;
+  background-image: url("/images/white_brick_wall.png");
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -26,25 +22,12 @@ img{
   text-align: center;
 }
 
-.grand{
-  font-size: x-large;
-}
-
 .vertical{
   vertical-align: middle;
 }
 
 .droite{
   float: right;
-}
-
-.bluePoly{
-  color: rgb(35,145,226);
-}
-
-.bandeau{
-  font-size: xx-large;
-  font-family: verdana;
 }
 
 /* Custom page header */
@@ -109,5 +92,9 @@ img{
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  .nomEntete, .textGlobal {
+    color: black;
   }
 }
