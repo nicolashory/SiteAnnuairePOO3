@@ -8,7 +8,7 @@
  * Controller of the gestionUsersApp
  */
 angular.module('gestionUsersApp')
-  .controller('UtilControler',  ['$scope', '$http', '$routeParams', 'Users', function ($scope, $http, $routeParams, Users) {
+  .controller('UtilControler',  ['$scope', '$http', '$routeParams', '$location', 'Users', function ($scope, $http, $routeParams, $location, Users) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -18,19 +18,19 @@ angular.module('gestionUsersApp')
     Users.getAll($routeParams.userId, function (data) {
       $scope.utils = data;
     }, function (data) {
-      //erreur dans le chargement
+      alert('Impossible de charger l\'annuaire !')
     });
 
     $scope.deleteElt = function (userId) {
       Users.delete(userId, function(data){
-          $location.path('/utilisateurs');
+          $location.path('/deletedUtil');
       }, function (data){
-        //erreur dans le delete
+        alert('L\'utilisateur n\'a pas pu être supprimé !');
       });
     }
   }])
 
-  .controller('AjoutUtilControler',['$scope', '$http', '$routeParams', 'Users', function ($scope, $http, $routeParams, Users){
+  .controller('AjoutUtilControler',['$scope', '$http', '$routeParams', '$location', 'Users', function ($scope, $http, $routeParams, $location, Users){
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -39,8 +39,9 @@ angular.module('gestionUsersApp')
 
     $scope.saveData = function () {
       Users.add($scope.user, function (data){
+        $location.path('/addedUtil');
       }, function (data){
-        //erreur dans l'ajout
+        alert('L\'utilisateur n\'a pas pu être ajouté !');
       });
     }
 
@@ -107,9 +108,10 @@ angular.module('gestionUsersApp')
 
     $scope.saveData = function() {
       Users.edit($scope.user, function(data) {
+          $location.path('/editedUtil');
         },
         function(data) {
-          $scope.error = data;
+          alert('L\'utilisateur n\'a pas pu être édité !');
         });
     };
   }])
