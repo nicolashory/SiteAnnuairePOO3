@@ -30,27 +30,27 @@ angular
       })
       .when('/projets',{
         templateUrl:'../views/projets/projets.html',
-        controller: 'ProjCtrl'
+        controller: 'ProjetControler'
       })
       .when('/ajoutUtil',{
         templateUrl:'../views/utilisateurs/ajoutUtil.html',
-        controller: 'AjoutUtilCtrl'
+        controller: 'AjoutUtilControler'
       })
       .when('/addProj',{
         templateUrl:'../views/projets/addProj.html',
-        controller: 'AddProjCtrl'
+        controller: 'AjoutProjetControler'
       })
       .when('/:userId/detailsUtil',{
         templateUrl:'../views/utilisateurs/detailsUtil.html',
-        controller:'DetailUtilCtrl'
+        controller:'DetailUtilControler'
       })
       .when('/:userId/editerUtil', {
         templateUrl:'../views/utilisateurs/editerUtil.html',
-        controller:'EditUtilCtrl'
+        controller:'EditUtilControler'
       })
       .when('/:projId/editerProj', {
         templateUrl:'../views/projets/addProj.html',
-        controller:'EditProjCtrl'
+        controller:'EditProjetControler'
       })
       .when('/addedUtil', {
         templateUrl:'../views/utilisateurs/addedUtil.html'
@@ -60,7 +60,7 @@ angular
       })
       .when('/:projId/detailsProj',{
         templateUrl:'../views/projets/detailsProj.html',
-        controller: 'DetailProjCtrl'
+        controller: 'DetailProjetControler'
       })
       .when('/deletedUtil', {
         templateUrl:'../views/utilisateurs/deletedUtil.html'

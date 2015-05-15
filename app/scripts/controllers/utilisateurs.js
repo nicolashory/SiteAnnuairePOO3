@@ -30,7 +30,7 @@ angular.module('gestionUsersApp')
     }
   }])
 
-  .controller('AjoutUtilCtrl',['$scope', '$http', '$routeParams', 'Users', function ($scope, $http, $routeParams, Users){
+  .controller('AjoutUtilControler',['$scope', '$http', '$routeParams', 'Users', function ($scope, $http, $routeParams, Users){
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -46,7 +46,7 @@ angular.module('gestionUsersApp')
 
   }])
 
-  .controller('DetailUtilCtrl',['$scope', '$http', '$routeParams', 'Users', 'Roles', 'Projects', function ($scope, $http, $routeParams, Users, Roles, Projects) {
+  .controller('DetailUtilControler',['$scope', '$http', '$routeParams', 'Users', 'Roles', 'Projects', function ($scope, $http, $routeParams, Users, Roles, Projects) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -88,7 +88,7 @@ angular.module('gestionUsersApp')
     }
   }])
 
-  .controller('EditUtilCtrl', ['$scope', '$http', '$routeParams', '$location', 'Users', function ($scope, $http, $routeParams, $location, Users) {
+  .controller('EditUtilControler', ['$scope', '$http', '$routeParams', '$location', 'Users', function ($scope, $http, $routeParams, $location, Users) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
