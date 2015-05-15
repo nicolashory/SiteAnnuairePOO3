@@ -37,7 +37,7 @@ angular
         controller: 'AjoutUtilControler'
       })
       .when('/addProj',{
-        templateUrl:'../views/projets/addProj.html',
+        templateUrl:'../views/projets/ajoutProj.html',
         controller: 'AjoutProjetControler'
       })
       .when('/:userId/detailsUtil',{
@@ -49,7 +49,7 @@ angular
         controller:'EditUtilControler'
       })
       .when('/:projId/editerProj', {
-        templateUrl:'../views/projets/addProj.html',
+        templateUrl:'../views/projets/editerProj.html',
         controller:'EditProjetControler'
       })
       .when('/addedUtil', {
@@ -64,6 +64,15 @@ angular
       })
       .when('/deletedUtil', {
         templateUrl:'../views/utilisateurs/deletedUtil.html'
+      })
+      .when('/addedProj', {
+        templateUrl:'../views/projets/addedProj.html'
+      })
+      .when('/editedProj', {
+        templateUrl:'../views/projets/editedProj.html'
+      })
+      .when('/deletedProj', {
+        templateUrl:'../views/projets/deletedProj.html'
       })
       .otherwise({
         redirectTo: '/'

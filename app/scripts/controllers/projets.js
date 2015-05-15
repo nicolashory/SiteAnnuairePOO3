@@ -18,19 +18,19 @@ angular.module('gestionUsersApp')
     Projects.getAll($routeParams.projId, function (data) {
       $scope.projects = data;
     }, function (data) {
-      //erreur dans le chargement
+      alert('Impossible de charger les projets !');
     });
 
     $scope.deleteElt = function (projId) {
       Projects.delete(projId, function(data){
-        $location.path('/projets');
+        $location.path('/deletedProj');
       }, function (data){
-        //erreur dans le delete
+        alert('Le projet n\'a pas pu être supprimé !');
       });
     }
 
   }])
-  .controller('AjoutProjetControler',  ['$scope', '$http', '$routeParams', 'Projects', function ($scope, $http, $routeParams, Projects) {
+  .controller('AjoutProjetControler',  ['$scope', '$http', '$routeParams', '$location', 'Projects', function ($scope, $http, $routeParams, $location, Projects) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -39,14 +39,14 @@ angular.module('gestionUsersApp')
 
     $scope.saveData = function () {
       Projects.add($scope.project, function (data){
-        //afficher l'élément ajouté
+        $location.path('/addedProj')
       }, function (data){
-        //erreur dans l'ajout
+        alert('Le projet n\'a pas pu être ajouté !');
       });
     }
   }])
 
-  .controller('EditProjControler',['$scope', '$http', '$routeParams', '$location', 'Projects', function ($scope, $http, $routeParams, $location, Projects) {
+  .controller('EditProjetControler',['$scope', '$http', '$routeParams', '$location', 'Projects', function ($scope, $http, $routeParams, $location, Projects) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -65,9 +65,9 @@ angular.module('gestionUsersApp')
 
     $scope.saveData = function () {
       Projects.edit($scope.project, function (data){
-        $location.path('/' + data.id + '/detailsProj');//a test
+        $location.path('/editedProj');
       }, function (data){
-        //erreur dans l'ajout
+        alert('Le projet n\'a pas pu être édité !');
       });
     }
   }])

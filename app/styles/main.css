@@ -93,8 +93,4 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
-
-  .nomEntete, .textGlobal {
-    color: black;
-  }
 }
