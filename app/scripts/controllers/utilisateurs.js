@@ -39,7 +39,6 @@ angular.module('gestionUsersApp')
 
     $scope.saveData = function () {
       Users.add($scope.user, function (data){
-
       }, function (data){
         //erreur dans l'ajout
       });
@@ -108,7 +107,6 @@ angular.module('gestionUsersApp')
 
     $scope.saveData = function() {
       Users.edit($scope.user, function(data) {
-          //$location.path('/utilisateurs');
         },
         function(data) {
           $scope.error = data;
