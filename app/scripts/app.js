@@ -45,16 +45,25 @@ angular
         controller:'DetailUtilCtrl'
       })
       .when('/:userId/editerUtil', {
-        templateUrl:'../views/utilisateurs/ajoutUtil.html',
+        templateUrl:'../views/utilisateurs/editerUtil.html',
         controller:'EditUtilCtrl'
       })
       .when('/:projId/editerProj', {
         templateUrl:'../views/projets/addProj.html',
         controller:'EditProjCtrl'
       })
+      .when('/addedUtil', {
+        templateUrl:'../views/utilisateurs/addedUtil.html'
+      })
+      .when('/editedUtil', {
+        templateUrl:'../views/utilisateurs/editedUtil.html'
+      })
       .when('/:projId/detailsProj',{
         templateUrl:'../views/projets/detailsProj.html',
         controller: 'DetailProjCtrl'
+      })
+      .when('/deletedUtil', {
+        templateUrl:'../views/utilisateurs/deletedUtil.html'
       })
       .otherwise({
         redirectTo: '/'
