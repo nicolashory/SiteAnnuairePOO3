@@ -7,3 +7,6 @@ test
 .sass-cache
 bower_components
 .gitattributes
+.yo-rc.json
+.travis.yml
+.jshintrc
