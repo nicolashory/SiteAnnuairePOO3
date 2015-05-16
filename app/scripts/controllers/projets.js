@@ -15,7 +15,7 @@ angular.module('gestionUsersApp')
       'Karma'
      ];
 
-    Projects.getAll($routeParams.projId, function (data) {
+    Projects.getAll(function (data) {
       $scope.projects = data;
     }, function (data) {
       alert('Impossible de charger les projets !');
@@ -72,7 +72,7 @@ angular.module('gestionUsersApp')
     }
   }])
 
-  .controller('DetailProjetControler',['$scope', '$http', '$routeParams', 'Users', 'Roles', 'Projects', function ($scope, $http, $routeParams, Users, Roles, Projects) {
+  .controller('DetailProjetControler',['$scope', '$http', '$routeParams', '$location', 'Users', 'Roles', 'Projects', function ($scope, $http, $routeParams, $location, Users, Roles, Projects) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -115,6 +115,14 @@ angular.module('gestionUsersApp')
         function (data) {
           $scope.error = data;// a refaire
         });
+    }
+
+    $scope.deleteElt = function(user){
+      Roles.delete(user.id, function (data) {
+        alert("Role supprimé pour l'utilisateur " + user.surname);
+      }, function(){
+        alert("Impossible de supprimer le role");
+      })
     }
   }])
 

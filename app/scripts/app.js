@@ -74,6 +74,14 @@ angular
       .when('/deletedProj', {
         templateUrl:'../views/projets/deletedProj.html'
       })
+      .when('/util/:userId/ajoutRoleUtil', {
+        templateUrl:'../views/roles/ajoutRoleUtil.html',
+        controller: 'AddUtilRoleControler'
+      })
+      .when('/proj/:projId/ajoutRoleProj', {
+        templateUrl:'../views/roles/ajoutRoleProj.html',
+        controller: 'AddProjetRoleControler'
+      })
       .otherwise({
         redirectTo: '/'
       });

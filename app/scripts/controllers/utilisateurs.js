@@ -15,7 +15,7 @@ angular.module('gestionUsersApp')
       'Karma'
     ];
 
-    Users.getAll($routeParams.userId, function (data) {
+    Users.getAll(function (data) {
       $scope.utils = data;
     }, function (data) {
       alert('Impossible de charger l\'annuaire !')
@@ -86,6 +86,14 @@ angular.module('gestionUsersApp')
         function (data) {
           $scope.error = data;
         });
+    }
+
+    $scope.deleteElt = function(proj){
+      Roles.delete(proj.id, function (data) {
+        alert("Role supprimé pour le projet " + proj.title);
+      }, function(){
+        alert("Impossible de supprimer le role");
+      })
     }
   }])
 
