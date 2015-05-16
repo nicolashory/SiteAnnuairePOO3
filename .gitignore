@@ -1,5 +1,5 @@
-.idea
 test
+.idea
 node_modules
 dist
 .editorconfig
