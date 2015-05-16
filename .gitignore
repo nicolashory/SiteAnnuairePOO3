@@ -6,3 +6,4 @@ test
 .tmp
 .sass-cache
 bower_components
+.gitattributes
