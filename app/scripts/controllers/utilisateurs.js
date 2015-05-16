@@ -92,7 +92,7 @@ angular.module('gestionUsersApp')
       Roles.delete(proj.id, function (data) {
         alert("Role supprimé pour le projet " + proj.title);
       }, function(){
-        alert("Impossible de supprimer le role");
+        alert("Impossible de supprimer le role !");
       })
     }
   }])
