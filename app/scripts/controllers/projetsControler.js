@@ -84,31 +84,31 @@ angular.module('gestionUsersApp')
       Projects.get($routeParams.projId,
         function (data) {
           $scope.proj = data;
-          var donneesUtil = new Array();
+          var utilsData = new Array();
           Projects.getUtil($routeParams.projId,
             function (data) {
-              donneesUtil = data;
-              var donneesRoles = new Array();
+              utilsData = data;
+              var rolesData = new Array();
               Projects.getRoles($routeParams.projId,
                 function (data) {
-                  donneesRoles = data;
-                  for(var i = 0 ; i < donneesRoles.length ; ++i){
-                    for(var j = 0 ; j < donneesUtil.length ; ++j){
-                      if(donneesRoles[i].UserId === donneesUtil[j].id){
-                        donneesRoles[i].surname = donneesUtil[j].surname;
-                        donneesRoles[i].prenom = donneesUtil[j].name;
+                  rolesData = data;
+                  for(var i = 0 ; i < rolesData.length ; ++i){
+                    for(var j = 0 ; j < utilsData.length ; ++j){
+                      if(rolesData[i].UserId === utilsData[j].id){
+                        rolesData[i].surname = utilsData[j].surname;
+                        rolesData[i].prenom = utilsData[j].name;
                         break;
                       }
                     }
                   }
-                  $scope.users = donneesRoles;
+                  $scope.users = rolesData;
 
                 }, function (data) {
                   alert("Impossible de charger les rôles !");
                 });
             },
             function (data) {
-              alert("Impossible de charger les rôles !");
+              alert("Impossible de charger les utilisateurs !");
             });
 
         },
