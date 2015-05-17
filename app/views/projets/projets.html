@@ -20,7 +20,7 @@
         <td> {{proj.year}}</td>
         <td> {{ proj.description}} </td>
         <td><a href="#/{{proj.id}}/editerProj"><i class="fa fa-pencil-square-o fa-2x"></i>Editer</a></td>
-        <td><a ng-click="deleteElt(proj.id)"><i class="fa fa-times fa-2x"></i>Supprimer</a></td>
+        <td><a href=""><button id="delete" name="delete" ng-click="deleteProj(proj.id)" class="btn btn-danger">Supprimer</button></a></td>
       </tr>
     </table>
   </div>
